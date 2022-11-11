@@ -12,5 +12,20 @@ var backgroundImage = new Array(
 );
 let i =0;
 next.onclick = function() {
-    hero.style.backgroundImage = 'url("'+backgroundImage[i+1]+'")';
+    if(i<4){
+        
+        hero.style.backgroundImage = 'url("'+backgroundImage[i+1]+'")';
+        thumbnail[i+1].classList.add('active');
+        thumbnail[i].classList.remove('active');
+        i++;
+    }
+}
+prev.onclick = function() {
+    if(i>0){
+        
+        hero.style.backgroundImage = 'url("'+backgroundImage[i-1]+'")';
+        thumbnail[i-1].classList.add('active');
+        thumbnail[i].classList.remove('active');
+        i--;
+    }
 }
